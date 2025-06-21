@@ -72,7 +72,7 @@ const CreateAd = () => {
           padding: "50px",
           maxWidth: "350px",
           margin: "0 auto",
-          backgroundColor: "#8884d8",
+          backgroundColor: "#F5F5DC",
           marginTop: "50px",
           marginBottom: "20px",
           borderRadius: "16px",

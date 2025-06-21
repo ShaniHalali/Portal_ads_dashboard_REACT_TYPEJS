@@ -19,7 +19,7 @@ const Header = () => {
         <Link to="/" style={{ color: "white", marginRight: "30px" }}>
           Dashboard
         </Link>
-        <Link to="/create" style={{ color: "white", marginRight: "70px" }}>
+        <Link to="/auth" style={{ color: "white", marginRight: "70px" }}>
           Create Ad
         </Link>
       </nav>
