@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { PieChart, Pie, Tooltip, Cell, ResponsiveContainer } from "recharts";
 
@@ -94,7 +94,7 @@ const AdStatsPie = () => {
             outerRadius={100}
             label={({ name, value }) => `${name} - ${value}%`}
           >
-            {calculateCategoryPercentages().map((entry, index) => (
+            {calculateCategoryPercentages().map((_, index) => (
               <Cell
                 key={`cell-${index}`}
                 fill={COLORS[index % COLORS.length]}
