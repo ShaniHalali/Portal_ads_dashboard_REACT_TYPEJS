@@ -1,23 +1,46 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import StatCard from "./StatCard"; 
-
+import StatCard from "./StatCard";
 
 const StatsOverview = () => {
-  const [totalClicks, setTotalClicks] = useState<number | null>(null);
-  const [totalCompletedViews, setTotalCompletedViews] = useState<number | null>(null);
-  const [totalViews, setTotalViews] = useState<number | null>(null);
- 
+  const [statCount, setStats] = useState({
+    totalClicks: 0,
+    totalCompletedViews: 0,
+    totalViews: 0,
+  });
+
   const [loading, setLoading] = useState(true);
+
+function renderValue(value: number, loading: boolean): string {
+  if (loading) {
+    return "Loading...";
+  }
+  return value.toString();
+}
+
+function getRate (loading: boolean, totalViews: number = 0,totalCompletedViews: number = 0 ) : string {
+  if (loading){
+        return "Loading...";
+
+  }else if (totalViews > 0){
+    const pressent = ((totalCompletedViews ?? 0) / totalViews) * 100;
+    return pressent.toFixed(1) + "%"
+  }else{
+    return "0%"
+  }
+
+}
+
 
   useEffect(() => {
     axios
       .get("https://ad-sdk-flask-api.vercel.app/ad_sdk/AdClickStats/summary")
       .then((res) => {
-        setTotalClicks(res.data.total_clicks);
-        setTotalCompletedViews(res.data.total_completed_views);
-        setTotalViews(res.data.total_views);
-        
+        setStats({
+          totalClicks: res.data.total_clicks,
+          totalCompletedViews: res.data.total_completed_views,
+          totalViews: res.data.total_views,
+        });
       })
       .catch((err) => {
         console.error("Failed to fetch stats", err);
@@ -31,22 +54,22 @@ const StatsOverview = () => {
     <div style={{ display: "flex", gap: "16px" }}>
       <StatCard
         label="Total Views"
-        value={loading ? "Loading..." : (totalViews ?? 0).toString()}
+        value={renderValue(statCount.totalViews ,loading)} 
         icon="👁️"
       />
       <StatCard
         label="Total Clicks"
-        value={loading ? "Loading..." : (totalClicks ?? 0).toString()}
+        value={renderValue(statCount.totalClicks ,loading)} 
         icon="🖱️"
       />
-       <StatCard
+      <StatCard
         label="Total Complited Videos Views"
-        value={loading ? "Loading..." : (totalCompletedViews ?? 0).toString()}
+        value={ renderValue(statCount.totalCompletedViews ,loading) }
         icon="🎬"
       />
-         <StatCard
+      <StatCard
         label="Total Click Through Rate"
-        value={loading? "Loading...": totalViews && totalViews > 0? ((totalCompletedViews ?? 0) / totalViews * 100).toFixed(1) + "%": "0%"}
+        value={getRate(loading, statCount.totalViews ?? 0, statCount.totalCompletedViews ?? 0) }
         icon="📈"
       />
     </div>

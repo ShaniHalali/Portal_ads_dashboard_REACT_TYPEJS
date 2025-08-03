@@ -1,0 +1,15 @@
+.info-window-div {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+.pie-container {
+  width: 100%;
+  max-width: 500;
+ justify-content: center;
+
+}
+.pie-title {
+  margin-bottom: 16px;
+}

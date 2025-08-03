@@ -1,25 +1,15 @@
+import "./Header.css";
 import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header
-      style={{
-        backgroundColor: "#4D2C91",
-        color: "white",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        width: "100%",
-        height: "60px",
-        boxSizing: "border-box",
-      }}
-    >
-      <h2 style={{ marginLeft: "50px" }}>Ads Dashboard</h2>
+    <header className="the-head">
+      <h2 className="header-title">Ads Dashboard</h2>
       <nav>
-        <Link to="/" style={{ color: "white", marginRight: "30px" }}>
+        <Link className="dash-link" to="/">
           Dashboard
         </Link>
-        <Link to="/auth" style={{ color: "white", marginRight: "70px" }}>
+        <Link className="create-link" to="/auth">
           Create Ad
         </Link>
       </nav>

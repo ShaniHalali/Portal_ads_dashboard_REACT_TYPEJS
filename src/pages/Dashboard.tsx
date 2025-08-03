@@ -1,3 +1,4 @@
+import "./Dashboard.css";
 import Header from "../components/Header";
 import ClickVsViewChart from "../components/ClickVsViewChart";
 import StatsOverview from "../components/StatsOverview";
@@ -8,35 +9,16 @@ function Dashboard() {
   return (
     <>
       <Header />
-      <main style={{ padding: "32px" }}>
-        <div
-          style={{
-            display: "flex",
-            gap: "20px 10px",
-            flexWrap: "wrap",
-            marginBottom: "40px",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
+      <main className="dashboard-main">
+        <div className="div-stats-overview">
           <StatsOverview />
         </div>
 
         <ClickVsViewChart />
-        <div style={{ paddingLeft: 0 }}>
-          <div
-            style={{
-              display: "flex",
-              gap: "300px",
-              justifyContent: "center",
-              alignItems: "flex-start",
-              flexWrap: "wrap",
-              backgroundColor: '#ffff'
-            }}
-          >
-            <AdStatsPie />
-            <TopClickedAds />
-          </div>
+
+        <div className="div-pie-and-topclicks">
+          <AdStatsPie />
+          <TopClickedAds />
         </div>
       </main>
     </>

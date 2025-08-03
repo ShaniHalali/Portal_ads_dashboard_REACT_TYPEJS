@@ -1,0 +1,24 @@
+.the-head {
+  background-color: #4d2c91;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  box-sizing: border-box;
+}
+
+.header-title {
+  margin-left: 50px;
+}
+
+.dash-link {
+  color: white;
+  margin-right: 30px;
+}
+
+.create-link {
+  color: white;
+  margin-right: 70px;
+}

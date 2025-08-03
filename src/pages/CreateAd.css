@@ -1,0 +1,50 @@
+.create-new-ad-card {
+  padding: 50px;
+  max-width: 350px;
+  margin: 0 auto;
+  background-color: #f5f5dc;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: black;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  padding: 10px;
+  border: none;
+}
+
+select {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.submit-button {
+  padding: 12px;
+  background-color: #3e2470;
+  border: none;
+  border-radius: 6px;
+  margin-top: 30px;
+}
+
+/* I used that insted of using useState on func onMouseHover */
+.submit-button:hover {
+  background-color: #4D2C91 ; 
+  cursor: pointer;
+  color: white; 
+}
+
+
+

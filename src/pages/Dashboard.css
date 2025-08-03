@@ -1,0 +1,22 @@
+.dashboard-main {
+    padding: "32px";
+}
+
+.div-stats-overview {
+  display: flex;
+  gap: 20px 10px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.div-pie-and-topclicks {
+   display: flex;
+   gap: 100px;
+   justify-content: center;
+   align-Items: flex-start;
+   flex-wrap: "wrap";
+   background-color: '#ffff';
+
+}

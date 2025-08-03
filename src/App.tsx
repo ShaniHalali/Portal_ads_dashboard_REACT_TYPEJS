@@ -1,4 +1,3 @@
-// src/App.tsx
 import { Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import CreateAd from "./pages/CreateAd";

@@ -1,0 +1,23 @@
+.frame-div {
+  padding: 20px;
+  max-width: 400px;
+}
+
+.top-click-title {
+  margin-bottom: 20px;
+}
+.ad-div {
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  color: white;
+  font-weight: bold;
+  transition: width 0.5s ease;
+}
+
+.space-object-div {
+  margin-bottom: 12px;
+}

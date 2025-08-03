@@ -1,3 +1,4 @@
+import "./AdStatsPie.css"
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { PieChart, Pie, Tooltip, Cell, ResponsiveContainer } from "recharts";
@@ -61,7 +62,7 @@ const AdStatsPie = () => {
       const data = payload[0].payload;
 
       return (
-        <div
+        <div className="info-window-div"
           style={{
             background: "white",
             border: "1px solid #ccc",

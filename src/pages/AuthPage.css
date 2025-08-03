@@ -1,0 +1,61 @@
+.auth-form {
+  background-color: #f5f5dc;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 320px;
+}
+
+.main-div {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.auth-h2 {
+  text-align: center;
+  margin-bottom: "20px";
+}
+
+.password-input {
+  width: 95%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.continue-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #55398d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  
+}
+
+.back-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #8884d8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.back-button:hover,
+.continue-button:hover {
+  background-color: #d38510;
+  cursor: pointer;
+  color: white;
+}
