@@ -1,4 +1,4 @@
-.info-window-div {
+.tooltip-div {
   background: white;
   border: 1px solid #ccc;
   padding: 8px;
@@ -6,10 +6,12 @@
 
 .pie-container {
   width: 100%;
-  max-width: 500;
- justify-content: center;
-
+  max-width: 500px;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10%;
 }
 .pie-title {
-  margin-bottom: 16px;
+  margin-left: 100px;
 }

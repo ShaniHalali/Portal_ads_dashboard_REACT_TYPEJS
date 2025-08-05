@@ -1,15 +1,21 @@
 import "./Header.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
+function getLinkClass(path: string): string {
+  return location.pathname === path ? "link-active" : "link";
+}
 
 const Header = () => {
+  const location = useLocation();
+
   return (
     <header className="the-head">
       <h2 className="header-title">Ads Dashboard</h2>
       <nav>
-        <Link className="dash-link" to="/">
+        <Link to="/" className={getLinkClass("/")}>
           Dashboard
         </Link>
-        <Link className="create-link" to="/auth">
+        <Link to="/create" className={getLinkClass("/create")}>
           Create Ad
         </Link>
       </nav>

@@ -13,12 +13,23 @@
   margin-left: 50px;
 }
 
-.dash-link {
-  color: white;
-  margin-right: 30px;
+
+nav {
+ display: flex;
+  gap: 30px; /* רווח של 30px בין הקישורים */
+  margin-right: 70px; /* אם את רוצה לדחוף הכל מהצד הימני */
+  align-items: center;
+
+
 }
 
-.create-link {
+.link {
   color: white;
-  margin-right: 70px;
+}
+
+.link-active {
+  font-weight: bold;
+  text-decoration: underline;
+    color: white;
+
 }

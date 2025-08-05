@@ -1,4 +1,4 @@
-import "./AdStatsPie.css"
+import "./AdStatsPie.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { PieChart, Pie, Tooltip, Cell, ResponsiveContainer } from "recharts";
@@ -8,7 +8,7 @@ type AdClickStat = {
   views_count: number;
 };
 
-const COLORS = ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0"];
+const COLORS = ["#ff6384ff", "#4144e2ff", "#b84bc0ff", "#26b84dff"];
 
 const AdStatsPie = () => {
   const [adStats, setAdStats] = useState<AdClickStat[]>([]);
@@ -62,13 +62,7 @@ const AdStatsPie = () => {
       const data = payload[0].payload;
 
       return (
-        <div className="info-window-div"
-          style={{
-            background: "white",
-            border: "1px solid #ccc",
-            padding: "8px",
-          }}
-        >
+        <div className="tooltip-div">
           <p>
             <strong>{data.name}</strong>
           </p>
@@ -82,8 +76,8 @@ const AdStatsPie = () => {
   };
 
   return (
-    <div style={{ width: "100%", maxWidth: 500 }}>
-      <h3 style={{ marginBottom: "16px" }}>Ads by Category</h3>
+    <div className="pie-container">
+      <h3 className="pie-title">Ads by Category</h3>
       <ResponsiveContainer width="100%" height={300}>
         <PieChart>
           <Pie

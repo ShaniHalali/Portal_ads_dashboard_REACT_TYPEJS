@@ -1,13 +1,18 @@
 .frame-div {
-  padding: 20px;
-  max-width: 400px;
+  padding: 24px;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 .top-click-title {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 .ad-div {
-  height: 40px;
+  height: 50px;
   border-radius: 12px;
   display: flex;
   justify-content: space-between;

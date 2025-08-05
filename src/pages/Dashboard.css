@@ -1,5 +1,5 @@
 .dashboard-main {
-    padding: "32px";
+  padding: "32px";
 }
 
 .div-stats-overview {
@@ -12,11 +12,8 @@
 }
 
 .div-pie-and-topclicks {
-   display: flex;
-   gap: 100px;
-   justify-content: center;
-   align-Items: flex-start;
-   flex-wrap: "wrap";
-   background-color: '#ffff';
-
+  display: flex;
+  gap: 200px;
+  justify-content: center;
+  margin-top: 30px;
 }

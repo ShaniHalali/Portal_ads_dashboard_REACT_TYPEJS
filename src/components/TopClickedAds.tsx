@@ -48,9 +48,10 @@ const TopClickedAds = () => {
             <div
               className="ad-div"
               style={{
-                width: `${percentage}%`,
+                width: `${percentage - 10}%`,
                 backgroundColor: COLORS[index % COLORS.length],
-              }} >
+              }}
+            >
               <span>{ad.ad_name}</span>
               <span>{ad.clicks_count.toLocaleString()}</span>
             </div>
