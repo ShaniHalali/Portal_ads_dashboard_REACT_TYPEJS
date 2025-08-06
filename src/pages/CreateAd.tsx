@@ -23,10 +23,25 @@ const CreateAd = () => {
     imageLink: "",
   });
 
+  const [adTypeTitle, setTypeTitle] = useState({
+    typeTitle: "Ad Type",
+    linkTypeTitle: "Link of the image",
+  });
+
+  function getSelectedType(type: string) {
+    const typeTitle = "Ad " + type;
+    const linkTypeTitle = "Link of the " + type;
+    setTypeTitle({ typeTitle: typeTitle, linkTypeTitle: linkTypeTitle });
+  }
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
+
+    if (name == "adType") {
+      getSelectedType(value);
+    }
 
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -47,12 +62,14 @@ const CreateAd = () => {
       package_name: "Ads",
     };
 
-  const begin = new Date(formData.beginningDate);
-  const end = new Date(formData.expirationDate);
-  if (begin > end) {
-    alert("Failed to create ad: beginning date is later than expiration date.");
-    return;
-  }
+    const begin = new Date(formData.beginningDate);
+    const end = new Date(formData.expirationDate);
+    if (begin > end) {
+      alert(
+        "Failed to create ad: beginning date is later than expiration date."
+      );
+      return;
+    }
 
     try {
       // API
@@ -85,12 +102,10 @@ const CreateAd = () => {
     <>
       <Header />
 
-          <div className="create-new-ad-card">
-          <h1>Create New Ad</h1>
+      <div className="create-new-ad-card">
+        <h1>Create New Ad</h1>
 
-        <form onSubmit={handleSubmit}>  
-
-
+        <form onSubmit={handleSubmit}>
           <h3>Ad Name</h3>
 
           <input
@@ -162,13 +177,16 @@ const CreateAd = () => {
             required
           />
 
-          <h3>Ad type</h3>
+          <h3>{adTypeTitle.typeTitle}</h3>
           <select name="adType" value={formData.adType} onChange={handleChange}>
+            <option value="" disabled>
+              Select
+            </option>
             <option value="photo">Photo Ad</option>
             <option value="video">Video Ad</option>
           </select>
 
-          <h3>Link of the image</h3>
+          <h3>{adTypeTitle.linkTypeTitle}</h3>
 
           <input
             name="imageLink"
@@ -181,10 +199,8 @@ const CreateAd = () => {
           <button className="submit-button" type="submit">
             Submit Ad
           </button>
-
         </form>
-                        </div>
-
+      </div>
     </>
   );
 };
